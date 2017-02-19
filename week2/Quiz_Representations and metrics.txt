@@ -1,0 +1,159 @@
+Representations and metrics
+
+6 questions
+---------------------------------------------------------------------------------------------------
+https://www.coursera.org/learn/ml-clustering-and-retrieval/exam/YV0W4/representations-and-metrics
+refer ipython notebook 'Quiz_working_Representations and metrics'
+---------------------------------------------------------------------------------------------------
+1. 
+
+Consider three data points with two features as follows:
+
+Among the three points, which two are closest to each other in terms of having the ​smallest Euclidean distance?
+
+A and B
+
+A and C
+
+B and C
+---------------------------------------------------------------------------------------------------
+https://en.wikipedia.org/wiki/Euclidean_distance
+A=(1,2)
+B=(3,5)
+C=(5,4)
+ 
+A-B = sqrt( (Ax-Bx)^2 + (Ay-By)^2 ) = sqrt( (1-3)^2 + (2-5)^2 ) = sqrt( 4 + 9 ) = sqrt(13)
+A-C = sqrt( (Ax-Cx)^2 + (Ay-Cy)^2 ) = sqrt( (1-5)^2 + (2-4)^2 ) = sqrt( 16 + 4 )= sqrt(20)
+B-C = sqrt( (Bx-Cx)^2 + (By-Cy)^2 ) = sqrt( (3-5)^2 + (5-4)^2 ) = sqrt( 4 + 1)  = sqrt(5)
+
+also refer ipython notebook 'Quiz_working_Representations and metrics'
+
+B-C has the smallest euclidian distance.
+---------------------------------------------------------------------------------------------------
+2. 
+
+Consider three data points with two features as follows:
+
+Among the three points, which two are closest to each other in terms of having the ​largest cosine similarity (or equivalently, ​smallest cosine distance)?
+
+A and B
+
+A and C
+
+B and C
+---------------------------------------------------------------------------------------------------
+https://en.wikipedia.org/wiki/Cosine_similarity
+refer lecture B4_Distance metrics Cosine similarity
+slides 36-38
+
+A=(1,2)
+B=(3,5)
+C=(5,4)
+
+refer ipython notebook
+
+cosine distance (a,b) =  0.003
+cosine distance (a,c) =  0.092
+cosine distance (b,c) =  0.063
+
+cosine distance a-b is smallest.  [CORRECT]
+---------------------------------------------------------------------------------------------------
+3. 
+
+Consider the following two sentences.
+
+    Sentence 1: The quick brown fox jumps over the lazy dog.
+    Sentence 2: A quick brown dog outpaces a quick fox. 
+
+Compute the Euclidean distance using word counts. To compute word counts, turn all words into lower case and strip all punctuation, so that "The" and "the" are counted as the same token. That is, document 1 would be represented as
+
+x=[# the,# a,# quick,# brown,# fox,# jumps,# over,# lazy,# dog,# outpaces]
+
+where # word is the count of that word in the document.
+
+Round your answer to 3 decimal places.
+---------------------------------------------------------------------------------------------------
+Sentence 1: The quick brown fox jumps over the lazy dog.
+Sentence 2: A quick brown dog outpaces a quick fox. 
+
+Sentence 1: The quick brown fox jumps over the lazy dog.
+
+1: [2:the, 1:quick, 1:brown, 1:fox, 1:jumps, 1:over, 1:lazy, 1:dog]
+2: [2:a, 2:quick, 1:brown, 1:dog, 1:outpaces, 1:fox]
+
+
+1: x=[2 the,0 a,1 quick,1 brown,1 fox,1 jumps,1 over,1 lazy,1 dog,0 outpaces] = [2,0,1,1,1,1,1,1,1,0]
+2: y=[0 the,2 a,2 quick,1 brown,1 fox,0 jumps,0 over,0 lazy,1 dog,1 outpaces] = [0,2,2,1,1,0,0,0,1,1]
+wordList1Count= [2, 0, 1, 1, 1, 1, 1, 1, 1, 0]
+wordList2Count= [0, 2, 2, 1, 1, 0, 0, 0, 1, 1]
+
+x.y = [2,0,1,1,1,1,1,1,1,0].[0,2,2,1,1,0,0,0,1,1] = 2x0 + 0x2 + 1x2 + 1x1 + 5x1 + 1x0 + 1x0 + 1x0 + 1x1 + 0x1 = 0+0+2+1+5+0+0+0+1+0 = 9
+x.x = [2,0,1,1,1,1,1,1,1,0].[2,0,1,1,1,1,1,1,1,0] = 2x2 + 0x0 + 1x1 + 1x1 + 1x1 + 1x1 + 1x1 + 1x1 + 1x1 + 0x0 = 4+0+1+1+1+1+1+1+1+0 = 11
+y.y = [0,2,2,1,1,0,0,0,1,1].[0,2,2,1,1,0,0,0,1,1] = 0x0 + 2x2 + 2x2 + 1x1 + 1x1 + 0x0 + 0x0 + 0x0 + 1x1 +1x1 = 0+4+4+1+1+0+0+0+1+1 = 12
+
+
+Euclidean distance = 9/(11 x 12) = 0.0162  [WRONG]
+
+refer ipython workbook.
+euclidian distance Sentence 1 - Sentence 2 =  3.606 [CORRECT]
+---------------------------------------------------------------------------------------------------
+4. 
+
+Consider the following two sentences.
+
+    Sentence 1: The quick brown fox jumps over the lazy dog.
+    Sentence 2: A quick brown dog outpaces a quick fox.
+
+Recall that
+
+cosine distance = 1 - cosine similarity = 1−xTy||x||||y||
+
+Compute the cosine distance between sentence 1 and sentence 2 using word counts. To compute word counts, turn all words into lower case and strip all punctuation, so that "The" and "the" are counted as the same token. That is, document 1 would be represented as
+
+x=[# the,# a,# quick,# brown,# fox,# jumps,# over,# lazy,# dog,# outpaces]
+
+where # word is the count of that word in the document.
+
+Round your answer to 3 decimal places.
+---------------------------------------------------------------------------------------------------
+1: x=[2 the,0 a,1 quick,1 brown,1 fox,1 jumps,1 over,1 lazy,1 dog,0 outpaces] = [2,0,1,1,1,1,1,1,1,0]
+2: y=[0 the,2 a,2 quick,1 brown,1 fox,0 jumps,0 over,0 lazy,1 dog,1 outpaces] = [0,2,2,1,1,0,0,0,1,1]
+
+refer working in ipython notebook
+cosine distance (Sentence 1,Sentence 2) =  0.565 [CORRECT]
+---------------------------------------------------------------------------------------------------
+5. 
+
+(True/False) For positive features, cosine similarity is always between 0 and 1.
+
+True
+
+False
+---------------------------------------------------------------------------------------------------
+refer slide 38
+Answer : True  [CORRECT]
+
+nb: if features can be positive &/or negative, then cosine similarity is always between -1 and +1
+---------------------------------------------------------------------------------------------------
+6. 
+
+Which of the following does not describe the word count document representation? (Note: this is different from TF-IDF document representation.)
+
+Ignores the order of the words
+
+Assigns a high score to a frequently occurring word
+
+Penalizes words that appear in every document
+
+---------------------------------------------------------------------------------------------------
+refer lecture in week 4 : Word count representation for measuring similarity
+https://www.coursera.org/learn/ml-foundations/lecture/KXqIu/word-count-representation-for-measuring-similarity
+also : wikipedia page : https://en.wikipedia.org/wiki/Bag-of-words_model
+
+
+TRUE : Ignores the order of the words
+TRUE : Assigns a high score to a frequently occurring word
+FALSE : Penalizes words that appear in every document
+[CORRECT]
+
+---------------------------------------------------------------------------------------------------
