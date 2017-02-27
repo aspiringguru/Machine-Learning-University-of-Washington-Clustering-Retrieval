@@ -2,7 +2,7 @@ Locality Sensitive Hashing
 
 5 questions
 ------------------------------------------------------------------------------------------
-
+https://www.coursera.org/learn/ml-clustering-and-retrieval/exam/7cVMj/locality-sensitive-hashing
 
 ------------------------------------------------------------------------------------------
 1. 
@@ -13,8 +13,7 @@ True
 
 False
 ------------------------------------------------------------------------------------------
-
-
+FALSE [CORRECT] 
 ------------------------------------------------------------------------------------------
 2. 
 
@@ -24,8 +23,7 @@ True
 
 False
 ------------------------------------------------------------------------------------------
-
-
+TRUE [CORRECT]
 ------------------------------------------------------------------------------------------
 3. 
 
@@ -35,7 +33,7 @@ True
 
 False
 ------------------------------------------------------------------------------------------
-
+FALSE [CORRECT]
 
 ------------------------------------------------------------------------------------------
 4. 
@@ -46,21 +44,20 @@ True
 
 False
 ------------------------------------------------------------------------------------------
-
-
+TRUE [CORRECT]
 ------------------------------------------------------------------------------------------
 5. 
 
-Suppose you trained an LSH model and performed a lookup using the bin index of the query. You notice that the list of candidates returned are not at all similar to the query item. Which of the following changes would not produce a more relevant list of candidates?
+Suppose you trained an LSH model and performed a lookup using the bin index of the query. You notice that the list of candidates returned are not at all similar to the query item. Which of the following changes would _NOT_ produce a more relevant list of candidates?
 
-Use multiple tables.
+[WRONG] Use multiple tables.
 
-Increase the number of random lines/hyperplanes.
+[CORRECT] Increase the number of random lines/hyperplanes.
 
-Inspect more neighboring bins to the bin containing the query.
+[WRONG]Inspect more neighboring bins to the bin containing the query.
 
-Decrease the number of random lines/hyperplanes.
+[WRONG]Decrease the number of random lines/hyperplanes.
 ------------------------------------------------------------------------------------------
-
+[CORRECT] Increase the number of random lines/hyperplanes.
 
 ------------------------------------------------------------------------------------------
