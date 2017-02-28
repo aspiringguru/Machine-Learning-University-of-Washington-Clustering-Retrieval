@@ -1,0 +1,52 @@
+
+-------------------------------------------------------------------------
+8. 
+
+Consider the following dataset:
+            	 X1	     X2
+Data point 1	-1.88	 2.05
+Data point 2	-0.71	 0.42
+Data point 3	 2.41	-0.67
+Data point 4	 1.85	-3.80
+Data point 5	-3.69	-1.33
+
+Perform k-means with k=2 until the cluster assignment does not change between successive iterations. Use the following initialization for the centroids:
+        	 X1	     X2
+Cluster 1	 2.00	 2.00
+Cluster 2	-2.00	-2.00
+
+Which of the five data points changed its cluster assignment most often during the k-means run?
+
+Data point 1
+
+Data point 2
+
+Data point 3
+
+Data point 4
+
+Data point 5
+-------------------------------------------------------------------------
+see working in spreadsheet/notebook
+
+
+            	 X1	     X2
+Data point 1	-1.88	 2.05
+Data point 2	-0.71	 0.42
+Data point 3	 2.41	-0.67
+Data point 4	 1.85	-3.80
+Data point 5	-3.69	-1.33
+
+        	 X1	     X2
+Cluster 1	 2.00	 2.00
+Cluster 2	-2.00	-2.00
+
+answer = Data point 2
+--------------------------------------------------------------------------
+refer slide 29
+initialization of k-means is critical to quality of local optima found.
+smart initialization
+1. choose first cluster center uniformly at random from data points.
+2. for each data point x, calc distance d(x) to nearest cluster centre.
+3. choose new cluster centre from the data points with prob of x being chosen proportional to d(x)^2.
+4. repeat steps 2 & 3 until k centres have been chosed.

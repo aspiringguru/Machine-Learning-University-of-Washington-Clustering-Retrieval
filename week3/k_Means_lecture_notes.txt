@@ -1,0 +1,148 @@
+-----------------------------------------------------------------
+Section 'Introduction to clustering'
+The goal of clustering
+https://www.coursera.org/learn/ml-clustering-and-retrieval/lecture/yXJLN/the-goal-of-clustering
+
+slides 1 to 
+
+goal: structure documents by topic.
+discover groups-clusters of articles
+
+
+'An unsupervised task'
+https://www.coursera.org/learn/ml-clustering-and-retrieval/lecture/vRE7c/an-unsupervised-task
+start slide 7
+
+previously : training set of labelled documents
+
+"Basic difference in layman terms : In supervised learning, the output datasets are provided which are used to train the machine and get the desired outputs whereas in unsupervised learning no datasets are provided, instead the data is clustered into different classes "
+
+multiclass classification problem : uses training set to create model - supervised training - model can then predict classification for new data.
+
+clustering - no labels provided.
+uncover cluster structure from input data alone.
+
+unsupervised learning task.
+
+what defines a cluster? slide 10
+- cluster has a center (centroid)
+- cluster has a shape. circle, ellipse, angle of axis.
+
+how to assign a document to a cluster?
+ - assign a score
+ie: score can be 'distance to cluster centre'
+
+-----------------------------------------------------------------
+"Hope for unsupervised learning, and some challenge cases"
+https://www.coursera.org/learn/ml-clustering-and-retrieval/lecture/DIwqE/hope-for-unsupervised-learning-and-some-challenge-cases
+
+unsupervised learning sounds crazy.
+
+machine learning identifies structure of data.
+- some data is easy to separate into clusters.
+- can be impossible to separate into clusters.
+- can be somewhere in between.
+
+slide 12-13 - typical challenge cases for clusters to discover.
+-----------------------------------------------------------------
+Section 'Clustering via k-means'
+https://www.coursera.org/learn/ml-clustering-and-retrieval/lecture/JZ62p/the-k-means-algorithm
+The k-means algorithm
+start slide 15
+
+slide 17 : summary of k-means algorythm.
+
+first step
+arg min : returns index j of the cluster whose centre is closest to Xi.
+
+
+slide 18 :  second step : revise cluster centres as mean of assigned observations.
+
+next step: repeat step 1 and step 2 until 'convergence'
+
+
+-----------------------------------------------------------------
+https://www.coursera.org/learn/ml-clustering-and-retrieval/lecture/Fb58J/k-means-as-coordinate-descent
+"k-means as coordinate descent"
+start : slide 21
+
+k-means iterates between two steps.
+- assigning observations to the nearest cluster centre.
+- updating the cluster centre using the assigned observations.
+refer slide 23
+
+example of co-ordinate descent algorythm.
+
+slide 24: start @ 2:05
+does this algorythm converge?
+- landscape is complicated.
+- cannot guarantee converging to a global minimum
+- because we know we can cast k-means as a core net descent algorythm we know we can converge to a local optimun.
+- recall: complicated landscape with lots of local nodes.
+
+converging to local node can result in uncertainty.
+notion of uncertainty in clustering is important.
+the groups of observations affected by centroid.
+
+
+-----------------------------------------------------------------
+https://www.coursera.org/learn/ml-clustering-and-retrieval/lecture/T9ZaG/smart-initialization-via-k-means
+Smart initialization via k-means++
+
+https://en.wikipedia.org/wiki/K-means%2B%2B
+"k-means++ is an algorithm for choosing the initial values (or "seeds") for the k-means clustering algorithm."
+"The k-means problem is to find cluster centers that minimize the intra-class variance, i.e. the sum of squared distances from each data point being clustered to its cluster center (the center that is closest to it)."
+"The intuition behind this approach is that spreading out the k initial cluster centers is a good thing"
+
+
+https://datasciencelab.wordpress.com/2014/01/15/improved-seeding-for-clustering-with-k-means/
+[haven't reviewed this yet]
+
+
+http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html
+
+lecture notes
+
+slide 29
+initialization of k-means is critical to quality of local optima found.
+smart initialization
+1. choose first cluster center uniformly at random from data points.
+2. for each data point x, calc distance d(x) to nearest cluster centre.
+3. choose new cluster centre from the data points with prob of x being chosen proportional to d(x)^2.
+4. repeat steps 2 & 3 until k centres have been chosed.
+
+more computationally intensive initially but improves quality of local optimum's and lower overall runtime.
+-----------------------------------------------------------------
+https://www.coursera.org/learn/ml-clustering-and-retrieval/lecture/JVWne/assessing-the-quality-and-choosing-the-number-of-clusters
+Assessing the quality and choosing the number of clusters
+
+measure quality of clustering slide 38
+more heterogenous = more dissimilar objects within cluster.
+vs
+tighter cluster = more homogenous
+
+want tight nice clusters
+want smaller sums of square distances.
+
+slide 39
+if make the number of clusters excessively large - result in cluster for each data item.
+ie k = N   k=# of clusters, N=# of data points.
+heterogeneity = 0 
+why? : distance data point to cluster centre is the distance of data point to itself.
+sum squares of zero is zero.
+example of overfitting!!!
+lowest possible cluster heterogeneity decreases with increasing k.
+
+homogeneous = uniform in composition or character
+heterogeneous = distinctly nonuniform 
+
+slide 40
+how do we choose # of clusters
+lower heterogeneity is better.
+too many clusters is not good, loses ability to detect natural groupings and recognise patterns.
+
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
