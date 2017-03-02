@@ -1,0 +1,107 @@
+Clustering text data with K-means
+
+8 questions
+-----------------------------------------------------------------------
+https://www.coursera.org/learn/ml-clustering-and-retrieval/exam/2yRba/clustering-text-data-with-k-means
+-----------------------------------------------------------------------
+
+1. 
+
+Make sure you have the latest versions of the notebook and the file kmeans-arrays.npz Read this post if
+
+    ... you downloaded the files before September 10
+    ... you created an Amazon EC2 instance before October 1
+
+I acknowledge.
+-----------------------------------------------------------------------
+select radio button = free point  [CORRECT]
+-----------------------------------------------------------------------
+2. 
+
+(True/False) The clustering objective (heterogeneity) is non-increasing for this example.
+
+True
+
+False
+-----------------------------------------------------------------------
+TRUE [CORRECT]
+-----------------------------------------------------------------------
+3. 
+
+Let's step back from this particular example. If the clustering objective (heterogeneity) would ever increase when running K-means, that would indicate: (choose one)
+
+K-means algorithm got stuck in a bad local minimum
+
+There is a bug in the K-means code
+
+All data points consist of exact duplicates
+
+Nothing is wrong. The objective should generally go down sooner or later.
+-----------------------------------------------------------------------
+answer = There is a bug in the K-means code  [CORRECT]
+NB : "K-means algorithm got stuck in a bad local minimum"
+
+-----------------------------------------------------------------------
+4. 
+
+Refer to the output of K-means for K=3 and seed=0. Which of the three clusters contains the greatest number of data points in the end?
+
+Cluster #0
+
+Cluster #1
+
+Cluster #2
+-----------------------------------------------------------------------
+answer = 1 [WRONG]
+-----------------------------------------------------------------------
+5. 
+
+Another way to capture the effect of changing initialization is to look at the distribution of cluster assignments. Compute the size (# of member data points) of clusters for each of the multiple runs of K-means.
+
+Look at the size of the largest cluster (most # of member data points) across multiple runs, with seeds 0, 20000, ..., 120000. What is the minimum value this quantity takes?
+-----------------------------------------------------------------------
+Minimum value of largest cluster size is: 15779 [CORRECT]
+refer code 
+-----------------------------------------------------------------------
+6. 
+
+Refer to the section "Visualize clusters of documents". Which of the 10 clusters above contains the _greatest_ number of articles?
+
+Cluster 0: artists, actors, film directors, playwrights
+
+Cluster 4: professors, researchers, scholars
+
+Cluster 5: Australian rules football players, American football players
+
+Cluster 7: composers, songwriters, singers, music producers
+
+Cluster 9: politicians
+-----------------------------------------------------------------------
+refer code as printout only shows for xx results for each bin.
+Cluster 0: artists, actors, film directors, playwrights [CORRECT]
+-----------------------------------------------------------------------
+7. 
+
+Refer to the section "Visualize clusters of documents". Which of the 10 clusters above contains the least number of articles?
+
+Cluster 1: soccer (association football) players, rugby players
+
+Cluster 3: baseball players
+
+Cluster 6: female figures from various fields
+
+Cluster 7: composers, songwriters, singers, music producers
+
+Cluster 8: ice hockey players
+-----------------------------------------------------------------------
+refer code as printout only shows for xx results for each bin.
+Cluster 8: ice hockey players [CORRECT]
+-----------------------------------------------------------------------
+8. 
+
+Another sign of too large K is having lots of small clusters. Look at the distribution of cluster sizes (by number of member data points). How many of the 100 clusters have fewer than 236 articles, i.e. 0.4% of the dataset?
+
+-----------------------------------------------------------------------
+refer code.
+29 [CORRECT]
+-----------------------------------------------------------------------

@@ -1,0 +1,7 @@
+C1_Motivating MapReduce
+
+Naive parallel word counting : word counts across documents can be done independently.
+count word occurances seperately, then merge.
+count every word in vocabulry in every document
+
+
